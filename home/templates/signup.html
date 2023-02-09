@@ -1,0 +1,66 @@
+{% load static %}
+
+<html lang="en">
+
+    <head>
+        <title>{% block title %}Sign up{% endblock %}</title>
+    
+        <!-- CSS only -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+            integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+            <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
+            <link rel="stylesheet" href="{% static 'css/base.css' %}">
+            <link rel="stylesheet" href="{% static 'two_factor/_base.css' %}">
+    
+        <!-- JS, Popper.js, and jQuery -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+            crossorigin="anonymous"></script>
+
+        <script src="{% static 'two_factor/_base.js' %}"></script>
+    
+        </head>
+    <body>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="display:flex; justify-content:center;">
+            <a class="navbar-brand" href="/home/"><img src="{% static 'img/bitvault.svg' %}" alt="BitVault" style="height: 2em; margin: 5px;">BitVault</a>
+        </nav>
+        <section class="vh-100" style="background-color: white;">
+            <div class="container py-5 h-100">
+              <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col col-xl-10">
+                  <div class="card" style="border-radius: 1rem;">
+                    <div class="row" style="justify-content: space-between;">
+                      <div class="col-lg-5">
+                        <img src="https://img.freepik.com/premium-photo/vertical-portrait-contemporary-african-american-man-using-laptop-while-sitting-white-desk-office-copy-space_236854-25537.jpg?w=2000"
+                          alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+                      </div>
+                      <div class="col-lg-7" style="width: auto;display: flex;flex-direction: column;justify-content: center;align-items: center;flex-wrap: nowrap;align-content: center;">
+                      <div class="card-body text-black text-center d-flex flex-column justify-content-center">
+                            <h2>Sign up</h2>
+                            <form method="post">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <button type="submit" class="btn btn-primary">Sign Up</button>
+                            </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </section>
+    </body>
+    <div class="container fixed-bottom" style="margin-top: 0px;">
+        <footer class="py-3 my-4">
+          <p class="text-center text-muted">&copy; 2022 BitVault, Inc</p>
+        </footer>
+    </div>
+</html>
