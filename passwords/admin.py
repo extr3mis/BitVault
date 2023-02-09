@@ -1,3 +1,4 @@
 from django.contrib import admin
+from .models import StoredPassword
 
-# Register your models here.
+admin.site.register(StoredPassword)
