@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} BitVault {% endblock %}
+
+{% block content %}
+
+<main role="main" style="margin: 0px;">
+    <div class="jumbotron" style="background-image: url('{% static 'home/img/hero-bg.jpg' %}'); background-size: cover; padding: 7%; border-radius: 0px;">
+        <div class="container" style="color: white;">
+            <h1 class="display-2">BitVault Password Manager</h1>
+            <p style="font-size: 1.4em;">
+                BitVault is a secure, open source password manager hosted in Django.
+                We use military grade <b>256-bit AES encryption</b> to ensure that nobody, not even us, can
+                access your passwords. Your account is secured with 2-factor authentication to further ensure
+                only you can view your stored passwords.<br><br>
+                <i>So, are you ready?</i>
+            </p>
+            <p><a class="btn btn-primary btn-lg" href="/signup/" role="button" id="hero-btn"><b>Sign me up &raquo;</b></a></p>
+        </div>
+    </div>
+
+</main>
+{% if not user.is_authenticated %}
+<script>
+    Cookies.remove('bitvault_key');
+</script>
+{% endif %}
+
+{% endblock %}
