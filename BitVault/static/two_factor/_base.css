@@ -1,0 +1,23 @@
+h1 {
+    font-weight: 700;
+}
+
+input {
+    font-size: 1.4em;
+    font-weight: 200;
+    border: 2px solid grey;
+    padding: 12px;
+    transition-duration: 0.5s;
+    margin-top: 10px;
+    margin-bottom: auto;
+}
+
+input:focus{
+    border: 2px solid black;
+    outline: none;
+    transition-duration: 0.5s;
+}
+
+.btn {
+    width: 100%;
+}

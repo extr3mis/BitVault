@@ -9,6 +9,8 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
             integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
             <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
             <link rel="stylesheet" href="{% static 'css/base.css' %}">
             <link rel="stylesheet" href="{% static 'two_factor/_base.css' %}">
@@ -37,16 +39,40 @@
                 <div class="col col-xl-10">
                   <div class="card" style="border-radius: 1rem;">
                     <div class="row" style="justify-content: space-between;">
-                      <div class="col-lg-5">
+                      <div class="col-lg-5" style="padding: 0px;">
                         <img src="https://img.freepik.com/premium-photo/vertical-portrait-contemporary-african-american-man-using-laptop-while-sitting-white-desk-office-copy-space_236854-25537.jpg?w=2000"
                           alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
                       </div>
-                      <div class="col-lg-7" style="width: auto;display: flex;flex-direction: column;justify-content: center;align-items: center;flex-wrap: nowrap;align-content: center;">
+                      <div class="col-lg-7" style="width: auto;display: flex;flex-direction: column;justify-content: center;align-items: center;flex-wrap: nowrap;align-content: center; padding: 0px;">
                       <div class="card-body text-black text-center d-flex flex-column justify-content-center">
                             <h2>Sign up</h2>
-                            <form method="post">
+                            <form method="post" style="width: 30rem">
                             {% csrf_token %}
-                            {{ form.as_p }}
+                            <div class="input-group mb-3">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text"/><i class="fa-solid fa-user"></i>
+                              </div>
+                              <input type="text" class="form-control" name = "username" maxlength="200" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" required_id="id_username" style="margin: 0px;">
+                            </div>
+                            <div class="input-group mb-3">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text"/><i class="fa-solid fa-envelope"></i>
+                              </div>
+                              <input type="email" class="form-control rounded-right" name="email" maxlength="200" placeholder="yourname@example.com" required id="id_email" style="margin: 0px;">
+                            </div>
+                            <div class="input-group mb-3">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text"/><i class="fa-solid fa-lock"></i>
+                              </div>
+                              <input type="password" class="form-control rounded-right" name="password1" maxlength="200" placeholder="Password" required id="id_password1" style="margin: 0px;">
+                            </div>
+                            <div class="input-group mb-3">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text"/><i class="fa-solid fa-check"></i>
+                              </div>
+                              <input type="password" class="form-control rounded-right" name="password2" maxlength="200" placeholder="Confirm password" required id="id_password2" style="margin: 0px;">
+                            </div>
+                            <br>
                             <button type="submit" class="btn btn-primary">Sign Up</button>
                             </form>
                         </div>
